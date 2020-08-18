@@ -1695,10 +1695,10 @@
   // Note: this values cannot be calibrated and have to be set manually
   #if ENABLED(PROBE_TEMP_COMPENSATION)
     // Park position to wait for probe cooldown
-    #define PTC_PARK_POS   { 0, 0, 100 }
+    #define PTC_PARK_POS   { 100, 125, 100 }
 
     // Probe position to probe and wait for probe to reach target temperature
-    #define PTC_PROBE_POS  { 90, 100 }
+    #define PTC_PROBE_POS  { 100, 100 }
 
     // Enable additional compensation using hotend temperature
     // Note: this values cannot be calibrated automatically but have to be set manually
@@ -1707,15 +1707,15 @@
     // Probe temperature calibration generates a table of values starting at PTC_SAMPLE_START
     // (e.g. 30), in steps of PTC_SAMPLE_RES (e.g. 5) with PTC_SAMPLE_COUNT (e.g. 10) samples.
 
-    //#define PTC_SAMPLE_START  30.0f
-    //#define PTC_SAMPLE_RES    5.0f
-    //#define PTC_SAMPLE_COUNT  10U
+    #define PTC_SAMPLE_START  30.0f
+    #define PTC_SAMPLE_RES    5.0f
+    #define PTC_SAMPLE_COUNT  10U
 
     // Bed temperature calibration builds a similar table.
 
-    //#define BTC_SAMPLE_START  60.0f
-    //#define BTC_SAMPLE_RES    5.0f
-    //#define BTC_SAMPLE_COUNT  10U
+    #define BTC_SAMPLE_START  60.0f
+    #define BTC_SAMPLE_RES    5.0f
+    #define BTC_SAMPLE_COUNT  10U
 
     // The temperature the probe should be at while taking measurements during bed temperature
     // calibration.
@@ -2430,7 +2430,7 @@
    * Define you own with
    * { <off_time[1..15]>, <hysteresis_end[-3..12]>, hysteresis_start[1..8] }
    */
-  #define CHOPPER_TIMING CHOPPER_DEFAULT_12V
+  #define CHOPPER_TIMING CHOPPER_DEFAULT_24V
 
   /**
    * Monitor Trinamic drivers
@@ -2443,7 +2443,7 @@
    * M912 - Clear stepper driver overtemperature pre-warn condition flag.
    * M122 - Report driver parameters (Requires TMC_DEBUG)
    */
-  //#define MONITOR_DRIVER_STATUS
+  #define MONITOR_DRIVER_STATUS
 
   #if ENABLED(MONITOR_DRIVER_STATUS)
     #define CURRENT_STEP_DOWN     50  // [mA]
@@ -2458,7 +2458,7 @@
    * STEALTHCHOP_(XY|Z|E) must be enabled to use HYBRID_THRESHOLD.
    * M913 X/Y/Z/E to live tune the setting
    */
-  //#define HYBRID_THRESHOLD
+  #define HYBRID_THRESHOLD
 
   #define X_HYBRID_THRESHOLD     100  // [mm/s]
   #define X2_HYBRID_THRESHOLD    100
@@ -2500,13 +2500,13 @@
    * IMPROVE_HOMING_RELIABILITY tunes acceleration and jerk when
    * homing and adds a guard period for endstop triggering.
    */
-  //#define SENSORLESS_HOMING // StallGuard capable drivers only
+  #define SENSORLESS_HOMING // StallGuard capable drivers only
 
   #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
     // TMC2209: 0...255. TMC2130: -64...63
-    #define X_STALL_SENSITIVITY  8
+    #define X_STALL_SENSITIVITY  128
     #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
-    #define Y_STALL_SENSITIVITY  8
+    #define Y_STALL_SENSITIVITY  128
     #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
     //#define Z_STALL_SENSITIVITY  8
     //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY
@@ -2538,7 +2538,7 @@
    * Enable M122 debugging command for TMC stepper drivers.
    * M122 S0/1 will enable continous reporting.
    */
-  //#define TMC_DEBUG
+  #define TMC_DEBUG
 
   /**
    * You can set your own advanced settings by filling in predefined functions.
