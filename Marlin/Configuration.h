@@ -1017,7 +1017,7 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-//#define MULTIPLE_PROBING 2
+#define MULTIPLE_PROBING 2
 //#define EXTRA_PROBING    1
 
 /**
@@ -1129,7 +1129,7 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 190
+#define X_BED_SIZE 220
 #define Y_BED_SIZE 240
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
@@ -1279,7 +1279,7 @@
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for the G26 Mesh Validation Tool.
     #define MESH_TEST_HOTEND_TEMP  230    // (°C) Default nozzle temperature for the G26 Mesh Validation Tool.
     #define MESH_TEST_BED_TEMP      60    // (°C) Default bed temperature for the G26 Mesh Validation Tool.
-    #define G26_XY_FEEDRATE         20    // (mm/s) Feedrate for XY Moves for the G26 Mesh Validation Tool.
+    #define G26_XY_FEEDRATE         30    // (mm/s) Feedrate for XY Moves for the G26 Mesh Validation Tool.
     #define G26_RETRACT_MULTIPLIER   1.0  // G26 Q (retraction) used by default between mesh test elements.
   #endif
 
@@ -1320,7 +1320,7 @@
 
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET 25              // Set Mesh bounds as an inset region of the bed
+  #define MESH_INSET 10              // Set Mesh bounds as an inset region of the bed
   #define GRID_MAX_POINTS_X 3     // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
@@ -1395,8 +1395,8 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT 0.5*X_BED_SIZE  // X point for Z homing
-  #define Z_SAFE_HOMING_Y_POINT 0.5*Y_BED_SIZE // Y point for Z homing
+  #define Z_SAFE_HOMING_X_POINT 95  // X point for Z homing
+  #define Z_SAFE_HOMING_Y_POINT 120 // Y point for Z homing
 #endif
 
 // Homing speeds (mm/m)
