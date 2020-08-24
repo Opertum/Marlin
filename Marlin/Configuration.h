@@ -1410,8 +1410,8 @@
 #define HOMING_FEEDRATE_Z  (20*60)
 =======
 // Homing speeds (mm/min)
-#define HOMING_FEEDRATE_XY (50*60)
-#define HOMING_FEEDRATE_Z  (4*60)
+#define HOMING_FEEDRATE_XY (150*60)
+#define HOMING_FEEDRATE_Z  (24*60)
 >>>>>>> upstream/bugfix-2.0.x
 
 // Validate that endstops are triggered on homing moves
