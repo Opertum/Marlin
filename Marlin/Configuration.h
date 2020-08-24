@@ -999,13 +999,8 @@
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
 #define PROBING_MARGIN 25
 
-<<<<<<< HEAD
-// X and Y axis travel speed (mm/m) between probes
-#define XY_PROBE_SPEED 10000
-=======
 // X and Y axis travel speed (mm/min) between probes
-#define XY_PROBE_SPEED (133*60)
->>>>>>> upstream/bugfix-2.0.x
+#define XY_PROBE_SPEED (150*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
@@ -1411,7 +1406,7 @@
 =======
 // Homing speeds (mm/min)
 #define HOMING_FEEDRATE_XY (150*60)
-#define HOMING_FEEDRATE_Z  (24*60)
+#define HOMING_FEEDRATE_Z  (20*60)
 >>>>>>> upstream/bugfix-2.0.x
 
 // Validate that endstops are triggered on homing moves
